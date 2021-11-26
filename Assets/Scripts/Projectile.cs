@@ -2,7 +2,9 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
+    [SerializeField] Rigidbody2D rigidbody2D;
     [SerializeField] private float speed;
+    
     private float direction;
     private bool hit;
     private float lifetime;
@@ -17,23 +19,23 @@ public class Projectile : MonoBehaviour
     }
     private void Update()
     {
+        gameObject.transform.parent = null;
         if (hit) return;
-        float movementSpeed = speed * Time.deltaTime * direction;
-        transform.Translate(movementSpeed, 0, 0);
-
+        
+        rigidbody2D.AddForce(gameObject.transform.right*speed*Time.deltaTime);
+        rigidbody2D.velocity = rigidbody2D.velocity.normalized * speed;
         lifetime += Time.deltaTime;
         if (lifetime > 5) gameObject.SetActive(false);
     }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        hit = true;
-        boxCollider.enabled = false;
-        anim.SetTrigger("explode");
-
-        if (collision.tag == "Enemy")
+    private void OnCollisionEnter2D(Collision2D other) {
+        if(other.gameObject.tag =="Enemy")
         {
-            collision.gameObject.SetActive(false);
+            //Sayacı buradan düşürebilirsin
+            //gameobject yok olduğundan dolayı bunun yıkarısına functionlar ekleyebilirsiniz
+            Destroy(other.gameObject);
+            Destroy(gameObject);
         }
+        
     }
     public void SetDirection(float _direction)
     {
