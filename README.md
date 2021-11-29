@@ -28,7 +28,7 @@ Ejderiya, 2 boyutlu platform oyunudur.
 
 
 ## Oyunu(Projeyi) nasıl kullanabilirim ?
-- Chrome, Safari, Firefox gibi web üzerinden oyunu https://simmer.io/@fport/ejderiya link üzerinden ulaşabilir. Keyifli bir oyun oynayabilirsin.
+- Chrome, Safari, Firefox gibi web tarayıcıları üzerinden oyunu https://simmer.io/@fport/ejderiya link üzerinden ulaşabilir. Keyifli bir oyun oynayabilirsin.
 - Ayrıca projeyi Unity üzerinden kodlarına erişmek için projeyi indirip Unity arayüzünden Add yaparak incelem fırsatı elde edebilirsin.
 
 
@@ -42,6 +42,6 @@ Ejderiya, 2 boyutlu platform oyunudur.
 - https://assetstore.unity.com/packages/2d/characters/pixel-adventure-1-155360
 
 ## Geliştiriciler ve Amaç
-- Muhammet Furkan Portakal (@fport) & Muhammet İkbal (@necmhi) tarafından yapılmıştır.
-- Furkan Portakal 18360859046, Muhammet İkbal 18360859056 okul numaraları.
+- Muhammet Furkan Portakal (@fport) & Muhammet İkbal Kılıç (@necmhi) tarafından yapılmıştır.
+- Furkan Portakal 18360859046, Muhammet İkbal Kılıç 18360859056 okul numaraları.
 - Bu oyun Bilgisayar Mühendisliği BLM0364 Oyun Programlama Dersi vizesi için geliştirilmiştir ve geliştirilmeye devam edilecektir.
