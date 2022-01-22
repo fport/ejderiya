@@ -11,6 +11,7 @@ public class Projectile : MonoBehaviour
 
     private Animator anim;
     private BoxCollider2D boxCollider;
+    public bool pause = false; 
 
     private void Awake()
     {
@@ -19,6 +20,10 @@ public class Projectile : MonoBehaviour
     }
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.P)){
+        pause = !pause;
+        }
+        if (!pause){
         gameObject.transform.parent = null;
         if (hit) return;
         
@@ -26,6 +31,7 @@ public class Projectile : MonoBehaviour
         rigidbody2D.velocity = rigidbody2D.velocity.normalized * speed;
         lifetime += Time.deltaTime;
         if (lifetime > 5) gameObject.SetActive(false);
+    }
     }
     private void OnCollisionEnter2D(Collision2D other) {
         if(other.gameObject.tag =="Enemy")

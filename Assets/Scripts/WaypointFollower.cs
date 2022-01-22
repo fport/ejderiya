@@ -8,9 +8,13 @@ public class WaypointFollower : MonoBehaviour
     private int currentWaypointIndex = 0;
 
     [SerializeField] private float speed = 2f;
-
+     public bool pause = false; 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.P)){
+        pause = !pause;
+        }
+        if (!pause){
         if (Vector2.Distance(waypoints[currentWaypointIndex].transform.position, transform.position) < .1f)
         {
             currentWaypointIndex++;
@@ -21,4 +25,5 @@ public class WaypointFollower : MonoBehaviour
         }
         transform.position = Vector2.MoveTowards(transform.position, waypoints[currentWaypointIndex].transform.position, Time.deltaTime * speed);
     }
+}
 }

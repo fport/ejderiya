@@ -12,6 +12,8 @@ public class PlayerMovement : MonoBehaviour
     private float wallJumpCooldown;
     private float horizontalInput;
 
+    public bool pause = false;
+
     private void Awake()
     {
         //Grab references for rigidbody and animator from object
@@ -22,7 +24,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        horizontalInput = Input.GetAxis("Horizontal");
+        if (Input.GetKeyDown(KeyCode.P)){
+            pause = !pause;
+        }
+        if (!pause){
+ horizontalInput = Input.GetAxis("Horizontal");
 
         //Flip player when moving left-right
         if (horizontalInput > 0.01f)
@@ -52,6 +58,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else
             wallJumpCooldown += Time.deltaTime;
+        }
     }
 
     private void Jump()
