@@ -4,23 +4,27 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class end : MonoBehaviour
 {
+           public void restart()
+   {
+ 
+            SceneManager.LoadScene(1);
+
+   }
        public void endgame()
    {
-       SceneManager.LoadScene("Level1");
+       if (SceneManager.GetActiveScene().buildIndex < 2)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
+        }
+        else if (SceneManager.GetActiveScene().buildIndex == 2)
+        {
+            SceneManager.LoadScene(0);
+        }
    }
         public void BackToMenu()
    {
        SceneManager.LoadScene(0);
    }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   
 }
